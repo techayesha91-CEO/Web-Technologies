@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity 1: Responsive Form</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+      <p class="course">Activity 1 &middot; CLO-4</p>
+      <h1>Responsive Form</h1>
+    </header>
+    <main class="content">
+      <p class="intro">Resize the browser window to see the effect. When the screen is less than 600px wide, the two columns stack on top of each other instead of sitting next to each other.</p>
+
+      <div class="form-box">
+        <form action="#" method="post">
+          <div class="row">
+            <div class="col-25"><label for="fname">First Name</label></div>
+            <div class="col-75"><input type="text" id="fname" name="firstname" placeholder="Your first name" required></div>
+          </div>
+          <div class="row">
+            <div class="col-25"><label for="lname">Last Name</label></div>
+            <div class="col-75"><input type="text" id="lname" name="lastname" placeholder="Your last name" required></div>
+          </div>
+          <div class="row">
+            <div class="col-25"><label for="country">Country</label></div>
+            <div class="col-75">
+              <select id="country" name="country">
+                <option value="pakistan">Pakistan</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25"><label for="subject">Subject</label></div>
+            <div class="col-75"><textarea id="subject" name="subject" placeholder="Write something..." style="height:150px"></textarea></div>
+          </div>
+          <div class="row">
+            <input type="submit" class="submit-btn" value="Submit">
+          </div>
+        </form>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="activity2.html">Next: Activity 2</a>
+      </nav>
+    </main>
+  </div>
+</body>
+</html>

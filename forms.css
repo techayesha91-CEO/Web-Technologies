@@ -1,0 +1,126 @@
+/* forms.css - styles for Activity 1 and Activity 2 (forms) */
+
+/* Common form box */
+.form-box {
+  max-width: 700px;
+  margin: 20px auto 0;
+  padding: 20px;
+  background: #f8fffe;
+  border: 1px solid #d5e3e1;
+  border-radius: 8px;
+}
+
+.form-box label {
+  display: inline-block;
+  padding: 12px 12px 12px 0;
+  font-weight: 600;
+}
+
+.form-box input[type="text"],
+.form-box input[type="email"],
+.form-box input[type="password"],
+.form-box select,
+.form-box textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #94a3b8;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 15px;
+  resize: vertical;
+}
+
+.form-box input:focus,
+.form-box select:focus,
+.form-box textarea:focus {
+  outline: none;
+  border-color: var(--main);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2);
+}
+
+/* Activity 1: two columns using div + float (Lecture 7) */
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clearfix: clears the floats after every row */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.submit-btn {
+  float: right;
+  margin-top: 14px;
+  padding: 12px 28px;
+  background: var(--main);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: var(--dark);
+}
+
+/* Activity 2: page title and registration form */
+.page-title {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 var(--accent);
+}
+
+.reg-form .form-group {
+  margin-bottom: 16px;
+}
+
+.reg-form label {
+  display: block;
+  padding: 0 0 6px;
+}
+
+.reg-form .radio-row label {
+  display: inline-block;
+  margin-right: 16px;
+  padding: 0;
+  font-weight: 400;
+}
+
+.reg-form .submit-btn {
+  float: none;
+  width: 100%;
+}
+
+/* Responsive: stack the columns on screens narrower than 600px */
+@media (max-width: 600px) {
+  .col-25,
+  .col-75,
+  .submit-btn {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .submit-btn {
+    float: none;
+    margin-top: 14px;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+}
