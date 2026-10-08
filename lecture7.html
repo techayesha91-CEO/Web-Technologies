@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 7: Positioning, z-index and Floats</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="lecture-header">
+      <span class="lec-badge">Lecture 7</span>
+      <h1>Positioning, z-index and Floats</h1>
+      <p>Normal flow, the position property, stacking order and floats</p>
+    </header>
+    <main class="content">
+      <h2>Summary</h2>
+      <p>This lecture starts from normal document flow and then explains static, relative, absolute, fixed and sticky positioning with the containing block. It also covers z-index and stacking contexts, and floats with clear and the clearfix technique.</p>
+      <h2>Topics Covered</h2>
+      <ul class="topics">
+        <li><strong>Normal Flow and Position</strong>
+          <ul>
+            <li>Normal document flow</li>
+            <li>static and relative</li>
+            <li>absolute and the containing block</li>
+            <li>fixed and sticky</li>
+          </ul>
+        </li>
+        <li><strong>Stacking</strong>
+          <ul>
+            <li>z-index</li>
+            <li>Stacking contexts</li>
+          </ul>
+        </li>
+        <li><strong>Floats</strong>
+          <ul>
+            <li>float: left and right</li>
+            <li>clear and clearfix</li>
+            <li>Float vs Flexbox</li>
+          </ul>
+        </li>
+      </ul>
+      <h2>Example Code</h2>
+<pre class="code">.card  { position: relative; }
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}</pre>
+      <h2>Output</h2>
+      <div class="output">
+        <div class="card">
+          Course card
+          <span class="badge">NEW</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="lecture6.html">Previous Lecture</a>
+        <a href="lecture8.html">Next Lecture</a>
+      </nav>
+    </main>
+  </div>
+</body>
+</html>

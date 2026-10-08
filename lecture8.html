@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 8: CSS Effects, Animations and Media Queries</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="lecture-header">
+      <span class="lec-badge">Lecture 8</span>
+      <h1>CSS Effects, Animations and Media Queries</h1>
+      <p>Visual effects, motion, fonts, variables and responsive CSS</p>
+    </header>
+    <main class="content">
+      <h2>Summary</h2>
+      <p>This lecture covers visual effects (border-radius, gradients, box-shadow, opacity), 2D/3D transforms, transitions and keyframe animations. It then explains web fonts, icon fonts and CSS custom properties, and finishes with media queries, feature queries and cross-browser compatibility.</p>
+      <h2>Topics Covered</h2>
+      <ul class="topics">
+        <li><strong>Visual Effects</strong>
+          <ul>
+            <li>border-radius</li>
+            <li>Linear and radial gradients</li>
+            <li>box-shadow and opacity</li>
+          </ul>
+        </li>
+        <li><strong>Motion</strong>
+          <ul>
+            <li>transform: translate, rotate, scale, skew</li>
+            <li>transition</li>
+            <li>@keyframes and animation</li>
+          </ul>
+        </li>
+        <li><strong>Fonts and Variables</strong>
+          <ul>
+            <li>@font-face and web fonts</li>
+            <li>Icon fonts</li>
+            <li>Custom properties with var()</li>
+          </ul>
+        </li>
+        <li><strong>Responsive and Compatible</strong>
+          <ul>
+            <li>@media queries</li>
+            <li>@supports</li>
+            <li>Vendor prefixes</li>
+          </ul>
+        </li>
+      </ul>
+      <h2>Example Code</h2>
+<pre class="code">.btn {
+  border-radius: 999px;
+  background: linear-gradient(90deg, #376fb4, #48a9a6);
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}</pre>
+      <h2>Output</h2>
+      <div class="output">
+        <button class="btn" type="button">Hover over me</button>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="lecture7.html">Previous Lecture</a>
+      </nav>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 5: CSS Basics: Syntax, Selectors and Cascade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="lecture-header">
+      <span class="lec-badge">Lecture 5</span>
+      <h1>CSS Basics: Syntax, Selectors and Cascade</h1>
+      <p>How CSS selects elements and decides which rule wins</p>
+    </header>
+    <main class="content">
+      <h2>Summary</h2>
+      <p>This lecture introduces CSS and its syntax, the three ways of adding CSS (inline, internal, external), and the different selectors. It explains pseudo-classes and pseudo-elements, the cascade, specificity and inheritance, and the basic colour, font, text and background properties.</p>
+      <h2>Topics Covered</h2>
+      <ul class="topics">
+        <li><strong>Syntax</strong>
+          <ul>
+            <li>Selector, property and value</li>
+            <li>Inline, internal and external CSS</li>
+          </ul>
+        </li>
+        <li><strong>Selectors</strong>
+          <ul>
+            <li>Element, class, id and attribute</li>
+            <li>Grouping, descendant, child and sibling</li>
+            <li>Universal selector</li>
+          </ul>
+        </li>
+        <li><strong>Pseudo and Cascade</strong>
+          <ul>
+            <li>Pseudo-classes: hover, focus, nth-child</li>
+            <li>Pseudo-elements: before, after</li>
+            <li>Cascade, specificity and inheritance</li>
+          </ul>
+        </li>
+        <li><strong>Appearance</strong>
+          <ul>
+            <li>Colour: HEX, RGB, RGBA</li>
+            <li>Font, text and background properties</li>
+          </ul>
+        </li>
+      </ul>
+      <h2>Example Code</h2>
+<pre class="code">p     { color: green; }
+.note { color: blue; }
+#intro { color: red; }
+
+&lt;p id=&quot;intro&quot; class=&quot;note&quot;&gt;Hello CSS&lt;/p&gt;</pre>
+      <h2>Output</h2>
+      <div class="output">
+        <p id="intro" class="note" style="margin:0;">Hello CSS</p>
+        <p style="margin:6px 0 0; font-size:14px; color:#475569;">The id selector has the highest specificity, so the text is red.</p>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="lecture4.html">Previous Lecture</a>
+        <a href="lecture6.html">Next Lecture</a>
+      </nav>
+    </main>
+  </div>
+</body>
+</html>

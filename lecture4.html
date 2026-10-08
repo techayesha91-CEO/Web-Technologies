@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 4: Semantic HTML, Forms and Validation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="lecture-header">
+      <span class="lec-badge">Lecture 4</span>
+      <h1>Semantic HTML, Forms and Validation</h1>
+      <p>Giving meaning to a page and collecting user input</p>
+    </header>
+    <main class="content">
+      <h2>Summary</h2>
+      <p>This lecture covers block and inline elements, div and span, and the HTML5 semantic elements that make a page accessible and SEO friendly. It then explains forms: action and method, labels, input types, select, textarea, buttons, and HTML5 validation with required, pattern, min and max.</p>
+      <h2>Topics Covered</h2>
+      <ul class="topics">
+        <li><strong>Meaning</strong>
+          <ul>
+            <li>Block vs inline elements</li>
+            <li>div and span</li>
+            <li>header, nav, main, section, article, aside, footer</li>
+          </ul>
+        </li>
+        <li><strong>Forms</strong>
+          <ul>
+            <li>action and method</li>
+            <li>label, input, select, textarea, button</li>
+            <li>fieldset and legend</li>
+          </ul>
+        </li>
+        <li><strong>Validation</strong>
+          <ul>
+            <li>required</li>
+            <li>pattern</li>
+            <li>min and max</li>
+            <li>Client vs server validation</li>
+          </ul>
+        </li>
+      </ul>
+      <h2>Example Code</h2>
+<pre class="code">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+  &lt;label for=&quot;reg&quot;&gt;Reg No:&lt;/label&gt;
+  &lt;input id=&quot;reg&quot; name=&quot;reg&quot; required
+         pattern=&quot;FA[0-9]{2}-BSE-[0-9]{3}&quot;&gt;
+  &lt;button type=&quot;submit&quot;&gt;Register&lt;/button&gt;
+&lt;/form&gt;</pre>
+      <h2>Output</h2>
+      <div class="output">
+        <form action="#" method="post">
+          <label for="reg">Reg No:</label>
+          <input id="reg" name="reg" required
+                 pattern="FA[0-9]{2}-BSE-[0-9]{3}">
+          <button type="submit">Register</button>
+        </form>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="lecture3.html">Previous Lecture</a>
+        <a href="lecture5.html">Next Lecture</a>
+      </nav>
+    </main>
+  </div>
+</body>
+</html>

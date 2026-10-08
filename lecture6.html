@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecture 6: CSS Box Model and Display</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <header class="lecture-header">
+      <span class="lec-badge">Lecture 6</span>
+      <h1>CSS Box Model and Display</h1>
+      <p>Content, padding, border and margin; sizing and display</p>
+    </header>
+    <main class="content">
+      <h2>Summary</h2>
+      <p>This lecture explains that every element is a box made of content, padding, border and margin. It covers box-sizing, margin collapsing, width and height with min/max limits, overflow, and the display property (block, inline, inline-block, none).</p>
+      <h2>Topics Covered</h2>
+      <ul class="topics">
+        <li><strong>Box Model</strong>
+          <ul>
+            <li>Content, padding, border, margin</li>
+            <li>Padding and margin shorthand</li>
+            <li>Margin collapsing</li>
+          </ul>
+        </li>
+        <li><strong>Sizing</strong>
+          <ul>
+            <li>content-box vs border-box</li>
+            <li>min/max width and height</li>
+            <li>overflow</li>
+          </ul>
+        </li>
+        <li><strong>Display and Style</strong>
+          <ul>
+            <li>block, inline, inline-block, none</li>
+            <li>Borders and box shadows</li>
+            <li>Consistent spacing</li>
+          </ul>
+        </li>
+      </ul>
+      <h2>Example Code</h2>
+<pre class="code">.box {
+  width: 250px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 30px;
+}
+
+/* Total width = 250 + 20 + 20 + 5 + 5 = 300px */</pre>
+      <h2>Output</h2>
+      <div class="output">
+        <div class="box">Content</div>
+        <p style="margin:0; font-size:14px; color:#475569;">Total box width = 250 + 20 + 20 + 5 + 5 = 300px</p>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="lecture5.html">Previous Lecture</a>
+        <a href="lecture7.html">Next Lecture</a>
+      </nav>
+    </main>
+  </div>
+</body>
+</html>
