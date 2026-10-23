@@ -1,0 +1,78 @@
+/* quiz.css - Assignment 2 (same teal/amber theme as style.css) */
+:root {
+  --dark: #0f3d3a; --main: #0f766e; --accent: #f59e0b; --light: #e6f4f2;
+  --page: #e8efee; --card: #ffffff; --soft: #f8fffe; --text: #1f2937; --muted: #475569; --line: #d5e3e1;
+  --ok: #16a34a; --bad: #dc2626; --late: #f59e0b; --idle: #cbd5e1;
+}
+[data-theme="dark"] {
+  --page: #0b1514; --card: #12211f; --soft: #0f1c1a; --text: #e5eeec; --muted: #9db3af; --line: #274642;
+  --light: #1a3331; --idle: #3b4f4c;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 30px 15px; background: var(--page); color: var(--text);
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif; line-height: 1.6; transition: background .3s, color .3s; }
+.q-wrapper { max-width: 820px; margin: 0 auto; background: var(--card); border-radius: 10px; overflow: hidden;
+  box-shadow: 0 6px 24px rgba(15, 60, 55, .22); animation: fadeIn .6s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: none; } }
+.q-header { position: relative; background: linear-gradient(135deg, var(--main), var(--dark)); color: #fff;
+  padding: 26px 34px; border-bottom: 6px solid var(--accent); }
+.q-header h1 { margin: 10px 0 4px; font-size: 28px; }
+.q-header p { margin: 0; font-style: italic; color: #d1efeb; }
+.q-badge { display: inline-block; background: var(--accent); color: #1f2937; font-weight: 700; font-size: 13px; padding: 2px 12px; border-radius: 12px; }
+.theme-btn { position: absolute; top: 18px; right: 20px; border: 1px solid rgba(255,255,255,.5); background: rgba(255,255,255,.15);
+  color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 14px; cursor: pointer; transition: transform .3s; }
+.theme-btn:hover { transform: scale(1.08); }
+.q-content { padding: 28px 34px 30px; }
+.q-intro { margin-top: 0; color: var(--muted); }
+.q-label { display: block; font-weight: 700; margin-bottom: 4px; }
+.q-input { width: 100%; padding: 9px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--soft); color: var(--text); font-size: 16px; }
+.q-input:focus { outline: 2px solid var(--main); }
+.q-rules { color: var(--muted); padding-left: 20px; }
+.q-rules li { margin-bottom: 6px; }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: middle; }
+.dot.ok { background: var(--ok); } .dot.bad { background: var(--bad); } .dot.late { background: var(--late); }
+.q-btn { border: none; background: var(--main); color: #fff; font-weight: 700; font-size: 16px; padding: 10px 28px; margin: 4px;
+  border-radius: 6px; cursor: pointer; transition: transform .3s ease, background .3s ease; }
+.q-btn:hover:not(:disabled) { background: var(--dark); transform: scale(1.06); }
+.q-btn.alt { background: var(--accent); color: #1f2937; }
+.q-btn.alt:hover:not(:disabled) { background: #d97706; color: #fff; }
+.q-btn:disabled { opacity: .45; cursor: not-allowed; }
+.timer-badge { background: var(--light); color: var(--main); font-weight: 700; padding: 2px 14px; border-radius: 20px; min-width: 64px; text-align: center; }
+.timer-badge.low { background: var(--bad); color: #fff; animation: pulse .8s infinite; }
+@keyframes pulse { 50% { opacity: .6; } }
+/* multi-colored segmented progress bar */
+.seg-bar { display: flex; gap: 5px; margin-bottom: 8px; }
+.seg { flex: 1; height: 14px; border-radius: 7px; background: var(--idle); transition: background .4s; }
+.seg.ok { background: var(--ok); } .seg.bad { background: var(--bad); } .seg.late { background: var(--late); }
+.seg.now { background: var(--main); animation: pulse 1.2s infinite; }
+.time-track { height: 5px; background: var(--idle); border-radius: 3px; overflow: hidden; margin-bottom: 18px; }
+.time-fill { height: 100%; width: 100%; background: var(--ok); transition: width 1s linear, background .5s; }
+.q-card { background: var(--soft); border: 2px dashed var(--main); border-radius: 8px; padding: 18px; margin-bottom: 14px; }
+.q-text { font-size: 20px; margin: 0 0 14px; color: var(--text); }
+.opt { width: 100%; text-align: left; display: flex; gap: 10px; align-items: center; padding: 11px 14px; background: var(--card);
+  color: var(--text); border: 2px solid var(--line); border-radius: 8px; font-size: 16px; cursor: pointer; transition: transform .2s, border-color .2s, background .2s; }
+.opt:hover:not(:disabled) { border-color: var(--main); transform: translateX(4px); }
+.opt b { background: var(--light); color: var(--main); min-width: 26px; height: 26px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+.opt:disabled { cursor: default; }
+.opt.right { background: var(--ok); border-color: var(--ok); color: #fff; }
+.opt.wrong { background: var(--bad); border-color: var(--bad); color: #fff; animation: shake .4s; }
+.opt.right b, .opt.wrong b { background: rgba(255,255,255,.25); color: #fff; }
+@keyframes shake { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+.feedback { min-height: 24px; margin: 12px 0 0; font-weight: 600; color: var(--muted); }
+.score-box { text-align: center; margin-bottom: 18px; }
+.score-ring { width: 130px; height: 130px; margin: 0 auto 10px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 30px; font-weight: 800; color: var(--text); background: conic-gradient(var(--ok) var(--pct, 0%), var(--idle) 0); position: relative; }
+.score-ring::after { content: ""; position: absolute; inset: 12px; background: var(--card); border-radius: 50%; }
+.score-ring span { position: relative; z-index: 1; }
+.review-title { font-size: 18px; color: var(--main); border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 4px; }
+.rev { border-left: 6px solid var(--idle); background: var(--soft); padding: 8px 14px; margin-bottom: 8px; border-radius: 0 6px 6px 0; font-size: 15px; }
+.rev.ok { border-color: var(--ok); } .rev.bad { border-color: var(--bad); } .rev.late { border-color: var(--late); }
+.rev small { display: block; color: var(--muted); }
+.q-nav { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); text-align: center; }
+.q-nav a { display: inline-block; padding: 7px 16px; background: var(--light); color: var(--main); font-weight: 600; text-decoration: none; border-radius: 4px; }
+.q-nav a:hover { background: var(--main); color: #fff; }
+@media (max-width: 600px) {
+  .q-content, .q-header { padding-left: 18px; padding-right: 18px; }
+  .q-header h1 { font-size: 23px; padding-right: 0; margin-top: 34px; }
+  .q-text { font-size: 18px; }
+}

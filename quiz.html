@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Assignment 2: Interactive Quiz App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+  <div class="q-wrapper">
+    <header class="q-header">
+      <button id="themeBtn" class="theme-btn" type="button" aria-label="Toggle dark or light mode">&#9790; Dark</button>
+      <span class="q-badge">Assignment 2</span>
+      <h1>Web Technologies Quiz</h1>
+      <p>Interactive quiz with timer, progress bar, dark mode and PDF result</p>
+    </header>
+
+    <main class="q-content">
+      <!-- Start screen -->
+      <section id="startScreen">
+        <p class="q-intro">Test yourself on HTML, CSS, JavaScript and Bootstrap. Questions and answer options are shuffled every time.</p>
+        <div class="row g-3 mb-3">
+          <div class="col-12 col-md-6">
+            <label class="q-label" for="nameInput">Your name</label>
+            <input id="nameInput" class="q-input" type="text" value="Ayesha Tariq" maxlength="40">
+          </div>
+          <div class="col-12 col-md-6">
+            <label class="q-label" for="countSelect">Number of questions</label>
+            <select id="countSelect" class="q-input">
+              <option value="5">5 questions</option>
+              <option value="8">8 questions</option>
+              <option value="10">10 questions</option>
+            </select>
+          </div>
+        </div>
+        <ul class="q-rules">
+          <li>Each question has <strong>20 seconds</strong>. When time ends, the correct answer is shown.</li>
+          <li>The bar on top shows your progress: <span class="dot ok"></span> correct, <span class="dot bad"></span> wrong, <span class="dot late"></span> time out.</li>
+          <li>Keyboard: press <strong>1&ndash;4</strong> to answer and <strong>Enter</strong> for next.</li>
+        </ul>
+        <div class="text-center"><button id="startBtn" class="q-btn" type="button">Start Quiz</button></div>
+      </section>
+
+      <!-- Quiz screen -->
+      <section id="quizScreen" hidden>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <strong id="qCount">Question 1 of 5</strong>
+          <span id="timerBadge" class="timer-badge">20s</span>
+        </div>
+        <div id="segBar" class="seg-bar" role="progressbar" aria-label="Quiz progress"></div>
+        <div class="time-track"><div id="timeFill" class="time-fill"></div></div>
+        <div class="q-card">
+          <h3 id="qText" class="q-text"></h3>
+          <div id="options" class="row g-2"></div>
+          <p id="feedback" class="feedback" aria-live="polite"></p>
+        </div>
+        <div class="text-end"><button id="nextBtn" class="q-btn" type="button" disabled>Next</button></div>
+      </section>
+
+      <!-- Result screen -->
+      <section id="resultScreen" hidden>
+        <div class="score-box">
+          <div class="score-ring" id="scoreRing"><span id="scoreText">0/0</span></div>
+          <h3 id="resultMsg"></h3>
+          <p id="resultStats"></p>
+        </div>
+        <div id="segBarFinal" class="seg-bar mb-3"></div>
+        <h4 class="review-title">Answer Review</h4>
+        <div id="review"></div>
+        <div class="text-center mt-3">
+          <button id="pdfBtn" class="q-btn" type="button">Download Result PDF</button>
+          <button id="againBtn" class="q-btn alt" type="button">Try Again</button>
+        </div>
+      </section>
+
+      <nav class="q-nav"><a href="index.html">Home</a></nav>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="quiz.js"></script>
+</body>
+</html>
